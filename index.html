@@ -1,1 +1,347 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shikkha Sofor | Abidur Rahman</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #07111e;
+    color: #e8f1fa;
+    font-family: 'Hind Siliguri', sans-serif;
+    min-height: 100vh;
+    padding: 25px 14px;
+}
+
+.container {
+    max-width: 850px;
+    margin: auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    color: #55e6a5;
+    font-size: 32px;
+}
+
+.header p {
+    color: #91a6b8;
+}
+
+.terminal {
+    background: #0b1928;
+    border: 1px solid #24445a;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 50px #0008;
+}
+
+.terminal-header {
+    background: #142a3e;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+}
+
+.red { background: #ff6464; }
+.yellow { background: #ffc857; }
+.green { background: #55e6a5; }
+
+.filename {
+    margin-left: 10px;
+    color: #c4d3e0;
+    font: 12px 'JetBrains Mono';
+}
+
+.terminal-body {
+    padding: 23px;
+    min-height: 280px;
+    font: 12px/2 'JetBrains Mono', monospace;
+    overflow-wrap: anywhere;
+}
+
+.line { min-height: 24px; }
+.prompt { color: #55e6a5; }
+.info { color: #8bd8ff; }
+.error { color: #ff7777; }
+.success { color: #55e6a5; }
+.muted { color: #91a6b8; }
+
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background: #55e6a5;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.profile {
+    margin-top: 22px;
+    padding: 25px;
+    border: 1px solid #24445a;
+    background: linear-gradient(135deg,#10283a,#0b1928);
+    border-radius: 16px;
+    text-align: center;
+}
+
+.photo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.photo-frame {
+    width: 160px;
+    height: 160px;
+    border: 3px solid #55e6a5;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #142a3e;
+    box-shadow: 0 0 25px #55e6a555;
+    transition: .3s;
+}
+
+.photo-frame:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #55e6a5;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 28%;
+    display: block;
+}
+
+.profile h2 {
+    margin-top: 12px;
+    font-size: 27px;
+}
+
+.role {
+    color: #55e6a5;
+    font: 11px 'JetBrains Mono';
+    margin-top: 8px;
+}
+
+.website {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 10px 20px;
+    border: 1px solid #55e6a5;
+    color: #55e6a5;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.website:hover {
+    background: #55e6a5;
+    color: #07111e;
+}
+
+.dua {
+    margin-top: 22px;
+    padding: 24px;
+    background: #102638;
+    border: 1px solid #29485a;
+    border-radius: 15px;
+}
+
+.dua h3 {
+    color: #f5cc78;
+    font-size: 23px;
+    margin-bottom: 13px;
+}
+
+.dua p {
+    font-size: 17px;
+    line-height: 2;
+    margin-bottom: 12px;
+    text-align: justify;
+}
+
+.closing {
+    color: #55e6a5;
+    font-weight: 600;
+}
+
+.footer {
+    text-align: center;
+    color: #91a6b8;
+    font-size: 12px;
+    padding: 23px 10px;
+}
+
+@media(max-width:550px) {
+    body { padding: 15px 10px; }
+    .terminal-body { padding: 16px; }
+    .profile { padding: 18px; }
+    .dua { padding: 17px; }
+    .dua p { font-size: 15px; }
+    .photo-frame { width: 140px; height: 140px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header class="header">
+    <h1>কোডিং যাত্রা শুরু</h1>
+    <p>Some journeys are experienced through memories and prayers.</p>
+</header>
+
+<section class="terminal">
+
+<div class="terminal-header">
+    <span class="dot red"></span>
+    <span class="dot yellow"></span>
+    <span class="dot green"></span>
+    <span class="filename">shikkha_sofor_trace.js</span>
+</div>
+
+<div class="terminal-body" id="terminal">
+    <div class="line prompt">
+        visitor@darunnazat:~$ <span class="cursor"></span>
+    </div>
+</div>
+
+</section>
+
+<section class="profile">
+
+<div class="photo">
+    <div class="photo-frame">
+        <img src="profile.jpg" alt="Abidur Rahman">
+    </div>
+</div>
+
+<h2>Abidur Rahman</h2>
+
+<div class="role">
+ASPIRING DEVELOPER | PROGRAMMER | TECH ENTHUSIAST
+</div>
+
+<a class="website"
+href="https://mrabid.free.je"
+target="_blank"
+rel="noopener noreferrer">
+↗ Visit My Personal Website
+</a>
+
+</section>
+
+<section class="dua">
+
+<h3>একটু দূরে, তবুও দোয়ায় সঙ্গে 🤲</h3>
+
+<p>
+এই আনন্দময় শিক্ষাসফরে সশরীরে আপনাদের সঙ্গী হতে পারলাম না,
+তাই মনে কিছুটা আক্ষেপ রয়ে গেল। তবে আমার আন্তরিক শুভকামনা
+ও দোয়া আপনাদের সবার সঙ্গে রয়েছে।
+</p>
+
+<p>
+মহান আল্লাহ আপনাদের এই সফরকে নিরাপদ, আনন্দময় ও কল্যাণে
+পরিপূর্ণ করুন। সফরের প্রতিটি মুহূর্ত সুন্দর ও স্মরণীয় করে দিন।
+সবাইকে সুস্থতা ও নিরাপত্তার সঙ্গে সফর শেষে আপন ঠিকানায়
+ফিরিয়ে আনুন।
+</p>
+
+<p class="closing">
+দূরত্ব হয়তো আমাকে আপনাদের সঙ্গ থেকে দূরে রেখেছে,
+কিন্তু দোয়ায় আপনারা রয়েছেন।
+
+আমিন, ইয়া রব্বাল আলামিন। 🤲
+</p>
+
+</section>
+
+<footer class="footer">
+© 2026 Abidur Rahman | Built with Code & Dua ❤️
+</footer>
+
+</div>
+
+<script>
+
+// TERMINAL ANIMATION
+
+const terminal = document.getElementById("terminal");
+
+const messages = [
+    {text:"npm run init-safari",type:"prompt"},
+    {text:"Loading Madrasa Shikkha Sofor modules...",type:"muted"},
+    {text:"Route: Dhaka → Cox's Bazar 🌊",type:"info"},
+    {text:"Checking developer presence in the team...",type:"muted"},
+    {text:"------------------------------------------------",type:"muted"},
+    {text:"[ERROR] 404: Shikkha Sofor-e amar presence found nai! 😔",type:"error"},
+    {text:"Reason: This time, I couldn't join the journey.",type:"muted"},
+    {text:"------------------------------------------------",type:"muted"},
+    {text:"Initializing fallback function: deployDua()...",type:"success"},
+    {text:"Dua deployed successfully! ✓",type:"success"}
+];
+
+const sleep = ms =>
+    new Promise(resolve => setTimeout(resolve, ms));
+
+async function typeLine(message) {
+
+    const line = document.createElement("div");
+    line.className = "line " + message.type;
+
+    terminal.appendChild(line);
+
+    for (const char of message.text) {
+        line.textContent += char;
+        await sleep(18);
+    }
+}
+
+async function startTerminal() {
+
+    await sleep(500);
+
+    for (const message of messages) {
+        await typeLine(message);
+        await sleep(260);
+    }
+
+    const cursor = document.createElement("span");
+    cursor.className = "cursor";
+    terminal.appendChild(cursor);
+}
+
+startTerminal();
+
+</script>
+
+</body>
+</html>
